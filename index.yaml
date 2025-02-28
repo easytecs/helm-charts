@@ -71,4 +71,22 @@ entries:
     urls:
     - https://github.com/easytecs/helm-charts/releases/download/grafana-uptime-0.3.2/grafana-uptime-0.3.2.tgz
     version: 0.3.2
-generated: "2025-01-20T16:41:38.729341866Z"
+  kmind-client:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-28T15:02:40.789613337Z"
+    dependencies:
+    - name: victoria-metrics-agent
+      repository: https://victoriametrics.github.io/helm-charts
+      version: 0.16.1
+    - name: promtail
+      repository: https://grafana.github.io/helm-charts
+      version: 6.16.6
+    description: A Helm chart for Kubernetes
+    digest: 068eb498d84d0efcc2492b8058f41999165d0012fc79b4ac6c164682357f3b86
+    name: kmind-client
+    type: application
+    urls:
+    - https://github.com/easytecs/helm-charts/releases/download/kmind-client-0.1.0/kmind-client-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-02-28T15:02:40.78963083Z"

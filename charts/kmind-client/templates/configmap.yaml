@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kmind-client-params
+data:
+  PORT: "{{ .Values.service.port }}"
+  TENANT_NAME: "{{ .Values.kmind.tenant.name }}"
+  KUBE_MIND_API_HOST: "{{ .Values.kmind.host.name }}"
+  KUBE_SECRETS: "{{ .Values.kmind.cluster.token }}"
+  KUBE_CLUSTER_INFO: "{{ .Values.kmind.cluster.name }}"

@@ -1,0 +1,67 @@
+replicaCount: 1
+
+image:
+  repository: easytecs/kmind-client
+  pullPolicy: IfNotPresent
+  tag: prod-ee2d747
+
+
+listServicesToCheck: []
+sleepTimeSecond: 15
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+podSecurityContext: {}
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 5000
+
+resources: 
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+nodeSelector: {}
+tolerations: []
+
+affinity: {}
+
+kmind:
+  host:
+    name: ""
+    security: "http"
+  cluster:
+    name: ""
+    token: ""
+  tenant:
+    name: ""
+
+victoria-metrics-agent:
+  remoteWrite:
+    - url: "https://exemple.com/api/v1/write"
+  extraArgs:
+    envflag.enable: "true"
+    envflag.prefix: VM_
+    loggerFormat: json
+    promscrape.maxScrapeSize: "93385352"
+    promscrape.suppressDuplicateScrapeTargetErrors: true
+
+promtail:
+  extraArgs:
+    - "-config.expand-env=true"
+    - "-client.external-labels=cluster_name=kmind"
+  config:
+    clients:
+      - url: "https://exemple.com/loki/api/v1/push"
+        headers:
+          X-Scope-OrgID: 1
+        tls_config:
+          insecure_skip_verify: true

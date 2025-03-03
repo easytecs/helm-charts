@@ -74,6 +74,23 @@ entries:
   kmind-client:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-03-03T18:43:18.546937195Z"
+    dependencies:
+    - name: victoria-metrics-agent
+      repository: https://victoriametrics.github.io/helm-charts
+      version: 0.16.1
+    - name: promtail
+      repository: https://grafana.github.io/helm-charts
+      version: 6.16.6
+    description: A Helm chart for Kubernetes
+    digest: c6e4ab6829b68f22b2990899794bff9e25288b455b4b1ebe48bff654ea437bec
+    name: kmind-client
+    type: application
+    urls:
+    - https://github.com/easytecs/helm-charts/releases/download/kmind-client-0.2.0/kmind-client-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-28T15:02:40.789613337Z"
     dependencies:
     - name: victoria-metrics-agent
@@ -89,4 +106,4 @@ entries:
     urls:
     - https://github.com/easytecs/helm-charts/releases/download/kmind-client-0.1.0/kmind-client-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-28T15:02:40.78963083Z"
+generated: "2025-03-03T18:43:18.546953015Z"

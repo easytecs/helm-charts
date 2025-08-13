@@ -381,3 +381,5 @@ promtail:
           X-Scope-OrgID: 1
         tls_config:
           insecure_skip_verify: true
+kube-state-metrics:
+prometheus-node-exporter:

@@ -17,7 +17,7 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["sh", "-c", "echo 'Executando job inicial...' && python3 /app/active.py"]
+          command: ["sh", "-c", "python3 /app/active.py"]
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           envFrom:

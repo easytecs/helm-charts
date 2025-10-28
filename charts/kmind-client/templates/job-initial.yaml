@@ -1,16 +1,16 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ include "yourchart.fullname" . }}-initial
+ name: {{ include "kmind-client.fullname" . }}-initial
   labels:
-    {{- include "yourchart.labels" . | nindent 4 }}
+    {{- include "kmind-client.labels" . | nindent 4 }}
 spec:
   backoffLimit: 1
   ttlSecondsAfterFinished: 300
   template:
     metadata:
       labels:
-        {{- include "yourchart.selectorLabels" . | nindent 8 }}
+        {{- include "kmind-client.selectorLabels" . | nindent 8 }}
     spec:
       restartPolicy: Never
       containers:

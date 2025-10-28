@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
- name: {{ include "kmind-client.fullname" . }}-initial
+  name: {{ include "kmind-client.fullname" . }}-initial
   labels:
     {{- include "kmind-client.labels" . | nindent 4 }}
 spec:

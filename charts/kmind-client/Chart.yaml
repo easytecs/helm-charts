@@ -36,3 +36,6 @@ dependencies:
 - name: prometheus-node-exporter
   version: "4.47.3"
   repository: "https://prometheus-community.github.io/helm-charts"
+- name: metrics-server
+  version: "3.13.0"
+  repository: "https://kubernetes-sigs.github.io/metrics-server"

@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: easytecs/kmind-client
   pullPolicy: IfNotPresent
-  tag: prod-ee2d747
+  tag: prod-ad1f4e6
 
 
 listServicesToCheck: []

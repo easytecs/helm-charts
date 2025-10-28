@@ -6,6 +6,6 @@ metadata:
 data:
   PORT: "{{ .Values.service.port }}"
   TENANT_NAME: "{{ .Values.kmind.tenant.name }}"
-  KUBE_MIND_API_HOST: "{{ .Values.kmind.host.name }}"
+  KUBE_MIND_API_HOST: "https://activator.kmind.com.br"
   KUBE_SECRETS: "{{ .Values.kmind.cluster.token }}"
   KUBE_CLUSTER_INFO: "{{ .Values.kmind.cluster.name }}"

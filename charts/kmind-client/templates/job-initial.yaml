@@ -22,7 +22,7 @@ spec:
           imagePullPolicy: IfNotPresent
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["python3 /app/active.py"]
+          command: ["python3", "/app/active.py"]
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           envFrom:

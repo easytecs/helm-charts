@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "yourchart.fullname" . }}-initial
+  labels:
+    {{- include "yourchart.labels" . | nindent 4 }}
+spec:
+  backoffLimit: 1
+  ttlSecondsAfterFinished: 300
+  template:
+    metadata:
+      labels:
+        {{- include "yourchart.selectorLabels" . | nindent 8 }}
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["sh", "-c", "echo 'Executando job inicial...' && python3 /app/active.py"]
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          envFrom:
+            - configMapRef:
+                name: kmind-client-params
+      imagePullSecrets:
+        {{- toYaml .Values.imagePullSecrets | nindent 8 }}
